@@ -14,7 +14,7 @@ public class Ex5 {
         scanner.close();
 
         try {
-            double[] rowananie = wspolczynniki(pierwszyPunktX, drugiPunktX, pierwszyPunktY, drugiPunktY);
+            double[] rowananie = wspolczynniki(pierwszyPunktX, pierwszyPunktY, drugiPunktX, drugiPunktY);
             System.out.println("y = " + rowananie[0] + "x + " + rowananie[1]);
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
@@ -25,7 +25,7 @@ public class Ex5 {
         if ((drugiPunktX == pierwszyPunktX) && (drugiPunktY == pierwszyPunktY)){
             throw new IllegalArgumentException("Współrzędne punktów nie mogą być takie same.");
         }
-        double a = (drugiPunktY - pierwszyPunktY) / (drugiPunktX - pierwszyPunktX);
+        double a = (pierwszyPunktY - drugiPunktY) / (pierwszyPunktX - drugiPunktX);
         double b = pierwszyPunktY - (a * pierwszyPunktX);
         return new double[]{a, b};
     }
